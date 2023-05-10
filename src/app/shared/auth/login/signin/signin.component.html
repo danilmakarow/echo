@@ -1,0 +1,19 @@
+<div class="auth-box">
+  <h2 class="auth-type">Sign In</h2>
+  <!--  <p class="subheading">Please enter your email, phone number and password</p>-->
+  <form [formGroup]="myForm">
+    <div class="auth-form-box">
+      <label class="auth-form-label">Your email</label>
+      <input type="mail" class="auth-form-input" placeholder="example@echo.io" formControlName="Email">
+    </div>
+    <div class="auth-form-box">
+      <label class="auth-form-label">Your password</label>
+      <input [type]="showPassword ? 'text' : 'password'" class="auth-form-input" placeholder="password" formControlName="Password">
+      <button mat-icon-button (click)="showPassword = !showPassword" class="btn-show-pass">
+        <mat-icon>{{!showPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </div>
+    <a class="link auth-form-link" (click)="router.navigateByUrl('auth/signup')">haven't join yet? <strong>sign up</strong></a>
+    <button class="btn btn--full btn-auth" (click)="signup()">Next</button>
+  </form>
+</div>
