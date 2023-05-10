@@ -28,6 +28,7 @@ export class UserDataService {
   }
 
   // Func calls when Current User changes
+  // TODO rewrite later
   public setNewUser(user: DocumentReference<UserDB>): void {
     this.unsubscribe$.next();
     this.curUserDoc = this.store.doc(`users/${user.id}`);
